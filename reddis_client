@@ -1,0 +1,117 @@
+127.0.0.1:6379> SADD CUST : name ram prem raju
+(integer) 5
+127.0.0.1:6379> SADD CUST : id 101 102 103
+(integer) 4
+127.0.0.1:6379> SADD CUST : brand standard cock metros
+(integer) 4
+127.0.0.1:6379> SADD CUST : disc 10 10 10
+(integer) 2
+127.0.0.1:6379> SADD ITEMS_1 : item_id 001 002 003
+(integer) 5
+127.0.0.1:6379> SADD ITEMS_2 : item_name fp gc sprkles
+(integer) 5
+127.0.0.1:6379> SADD ITEMS_1 : item_name fp gc sprkles
+(integer) 4
+127.0.0.1:6379> SADD ITEMS_2 : item_id 004 005 006
+(integer) 4
+127.0.0.1:6379> SADD ITEMS_1 : item_pr 80 100 30
+(integer) 4
+127.0.0.1:6379> SADD ITEMS_2 : item_pr 80 110 35
+(integer) 4
+127.0.0.1:6379> SADD ITEMS_3 : item_id 007 008 009
+(integer) 5
+127.0.0.1:6379> SADD ITEMS_3 : item_name fp gc sprkles
+(integer) 4
+127.0.0.1:6379> SADD ITEMS_3 : item_pr 85 115 40
+(integer) 4
+127.0.0.1:6379> SADD SALESMAN : name arun veera suresh
+(integer) 5
+127.0.0.1:6379> SADD SALESMAN : sales_id 1122 1123 1124
+(integer) 4
+127.0.0.1:6379> SADD SALESMAN : slry 20000 25000 30000
+(integer) 4
+127.0.0.1:6379> SMEMBERS CUST
+ 1) "standard"
+ 2) "name"
+ 3) "metros"
+ 4) "brand"
+ 5) "101"
+ 6) "103"
+ 7) "cock"
+ 8) "prem"
+ 9) "disc"
+10) "102"
+11) "ram"
+12) "10"
+13) "raju"
+14) ":"
+15) "id"
+127.0.0.1:6379> SMEMBERS ITEMS_1
+ 1) "003"
+ 2) "fp"
+ 3) "sprkles"
+ 4) "002"
+ 5) "30"
+ 6) "gc"
+ 7) "001"
+ 8) "item_pr"
+ 9) "item_name"
+10) "item_id"
+11) ":"
+12) "100"
+13) "80"
+127.0.0.1:6379> SMEMBERS ITEMS_2
+ 1) "35"
+ 2) "fp"
+ 3) "sprkles"
+ 4) "005"
+ 5) "gc"
+ 6) "004"
+ 7) "item_pr"
+ 8) "110"
+ 9) "item_name"
+10) "006"
+11) "item_id"
+12) ":"
+13) "80"
+127.0.0.1:6379> SMEMBERS ITEMS_3
+ 1) "fp"
+ 2) "85"
+ 3) "008"
+ 4) "sprkles"
+ 5) "007"
+ 6) "gc"
+ 7) "40"
+ 8) "item_pr"
+ 9) "item_name"
+10) "115"
+11) "item_id"
+12) ":"
+13) "009"
+127.0.0.1:6379> SMEMBERS SALESMAN
+ 1) ":"
+ 2) "name"
+ 3) "veera"
+ 4) "30000"
+ 5) "suresh"
+ 6) "sales_id"
+ 7) "1124"
+ 8) "1123"
+ 9) "25000"
+10) "slry"
+11) "20000"
+12) "arun"
+13) "1122"
+127.0.0.1:6379> SADD WHLSALE : disc 10 15 20
+(integer) 5
+127.0.0.1:6379> SPOP WHLSALE
+"15"
+127.0.0.1:6379> SMEMBERS WHLSALE
+1) "disc"
+2) "10"
+3) ":"
+4) "20"
+127.0.0.1:6379> DEL WHLSALE
+(integer) 1
+127.0.0.1:6379> SMEMBERS WHLSALE
+(empty list or set)
